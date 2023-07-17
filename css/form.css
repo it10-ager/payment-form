@@ -1,0 +1,520 @@
+.main-form-wrapper{
+	margin: auto;
+	max-width: 510px;
+	min-width: 320px;
+	margin-top: 30px;
+	margin-bottom: 100px;
+	padding: 5px;
+}
+
+.form-body{
+	width: 100%;
+	background-color: var(--color-2);
+	border-radius: 16px;
+	height: 600px;
+	-webkit-box-shadow: 0px 4px 14px 2px rgba(217,217,217,1);
+	-moz-box-shadow: 0px 4px 14px 2px rgba(217,217,217,1);
+	box-shadow: 0px 4px 14px 2px rgba(217,217,217,1);
+	overflow: hidden;
+	margin-bottom: 50px;
+}
+
+.form-body#by-card-number{
+	display: block;
+}
+
+.form-body#by-phone-number{
+	display: none;
+}
+
+.form-header{
+	height: 60px;
+	background-color: var(--color-5);
+	padding: 6px 10%;
+	border-top-left-radius: 16px;
+	border-top-right-radius: 16px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.step-bar{
+	width: 34px;
+	height: 34px;
+	border-radius: 50%;
+	clip-path: circle(50% at 50% 50%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	z-index: 2;
+	overflow: hidden;
+	background-color: var(--color-2);
+	margin-right: 16px;
+}
+
+.step-bar .step-progress{
+	position: absolute;
+	z-index: 4;
+	width: 100%;
+	height: 100%;
+	top: -10px;
+	left: 50%;
+	background-color: var(--color-3);
+}
+
+.step-bar .circle{
+	position: absolute;
+	z-index: 5;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	color: #fff;
+	background-color: var(--color-5);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.step-bar .circle > span{
+	font-size: 14px;
+	position: relative;
+	left: 1.5px;
+	letter-spacing: 1px;
+	width: 100%;
+	text-align: center;
+}
+
+.header-txt{
+	font-weight: 600;
+	font-size: 18px;
+	color: #fff;
+}
+
+.form .form-wrapper-inside{
+	padding: 35px 10% 0px;
+	width: 100%;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.type-of-payment{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	-webkit-box-shadow: inset 0px 0px 0px 2px rgba(242,242,242,1);
+	-moz-box-shadow: inset 0px 0px 0px 2px rgba(242,242,242,1);
+	box-shadow: inset 0px 0px 0px 2px rgba(242,242,242,1);
+	border-radius: 22px;
+	background-color: #f1f1f18f;
+	margin-bottom: 40px;
+}
+
+@media screen and (min-width: 490px){
+	.type-of-payment{
+		display: flex;
+		flex-direction: row;
+	}
+}
+
+.type-of-payment button{
+	width: 100%;
+	height: 44px;
+	font-size: 14px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding: 0 10px;
+	border-radius: 40px;
+	background-color: transparent;
+	color: #888888;
+	font-weight: 500;
+	position: relative;
+	user-select: none;
+	cursor: pointer;
+	overflow: hidden;
+	border: 2px solid;
+	border-color: transparent;
+	transition: border-color 0.3s ease;
+}
+
+.type-of-payment button#select-type-in-card-card.active.border-hidden{
+	border-color: transparent;
+	background-color: transparent;
+}
+
+.type-of-payment button#select-type-in-phone-number.active.border-hidden{
+	border-color: transparent;
+}
+
+.type-of-payment button.active{
+	border: 2px solid;
+	border-color: var(--color-3);
+	background-color: var(--color-8);
+	color: var(--color-1);
+	transition: all 0.3s ease;
+}
+
+.type-of-payment button:first-child.active > svg{
+	fill: var(--color-3);
+}
+
+.type-of-payment button:first-child > svg{
+	width: 18px;
+	margin-right: 8px;
+}
+
+.type-of-payment button:last-child > img{
+	width: 18px;
+	margin-right: 5px;
+}
+
+/* .type-of-payment button:not(:last-of-type){
+	margin-bottom: 10px;
+} */
+
+.input-field-wrapper{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 40px;
+}
+
+.label{
+	display: block;
+	width: 100%;
+	position: relative;
+}
+
+.label input{
+	width: 100%;
+	height: 44px;
+	padding: 5px 18px;
+	border: 2px solid var(--color-9);
+	border-radius: 16px;
+}
+
+.label input#sum-value-card-number{
+	margin-bottom: 24px;
+}
+
+.label input::placeholder{
+	font-size: 12px;
+	color: var(--color-10);
+}
+
+.label span{
+	font-size: 10px;
+	color: var(--color-10);
+}
+
+.label span.title-sum{
+	position: absolute;
+	background-color: var(--color-2);
+	z-index: 2;
+	top: -10px;
+	left: 16px;
+	padding: 2px 4px;
+}
+
+.label span.title-range{
+	position: absolute;
+	background-color: var(--color-2);
+	padding: 2px 4px;
+	z-index: 2;
+	right: 16px;
+	top: -10px;
+}
+
+.label span.currency{
+	position: absolute;
+	top: 12px;
+	right: 20px;
+	font-size: 14px;
+}
+
+.select-bank{
+	width: 100%;
+}
+
+.select-bank .field-selected-bank{
+	width: 100%;
+	height: 44px;
+	padding: 5px 18px;
+	border: 2px solid;
+	border-color: var(--color-9);
+	border-radius: 16px;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background-color: var(--color-2);
+	transition: border-color 0.2s ease;
+	cursor: pointer;
+}
+
+.select-bank .field-selected-bank:hover{
+	border-color: var(--color-11);
+}
+
+.select-bank .field-selected-bank.active-select{
+	border-color: var(--color-3);
+}
+
+.select-bank .field-selected-bank .field-bank-title{
+	position: absolute;
+	background-color: var(--color-2);
+	z-index: 2;
+	top: -12px;
+	left: 16px;
+	padding: 2px 4px;
+	display: flex;
+	align-items: center;
+	transition: color 0.2s ease;
+}
+
+.select-bank .field-selected-bank .field-bank-title > span{
+	font-size: 10px;
+	color: var(--color-10);
+	margin-right: 3px;
+}
+
+.select-bank .field-selected-bank.active-select .field-bank-title > span{
+	color: var(--color-3)!important;
+}
+
+.select-bank .field-selected-bank .field-bank-title > svg{
+	height: 16px;
+	fill: var(--color-3);
+}
+
+.field-selected-bank-content{
+	display: flex;
+	align-items: center;
+}
+
+.field-selected-bank-content > img{
+	height: 10px;
+	margin-right: 10px;
+}
+
+.field-selected-bank-content > img.sber{
+	height: 14px;
+	margin-left: -7px;
+	margin-right: 4px;
+}
+
+.field-selected-bank-content > img.tinkoff{
+	height: 14px;
+	margin-left: -1px;
+	margin-right: 8px;
+}
+
+.galochka{
+	position: absolute;
+	top: 10px;
+	right: 14px;
+	width: 20px;
+	height: 20px;
+}
+
+.galochka span{
+	background-color: var(--color-3);
+	display: block;
+	width: 9px;
+	height: 2px;
+	border-radius: 10px;
+	position: absolute;
+	top: 10px;
+	left: 8px;
+}
+
+.galochka > span:first-child{
+	left: 2px;
+	transform: rotate(-142deg);
+}
+
+.galochka > span:last-child{
+	transform: rotate(142deg);
+}
+
+.field-selected-bank ul.bank-list{
+	width: 103%;
+	border-radius: 6px;
+	background-color: var(--color-2);
+	display: none;
+	opacity: 0;
+	transition: opacity 0.2s ease;
+	position: absolute;
+	z-index: 4;
+	top: 52px;
+	left: -4px;
+	right: 0;
+	overflow: hidden;
+	-webkit-box-shadow: 0px 2px 10px 0px rgba(173,173,173,1);
+	-moz-box-shadow: 0px 2px 10px 0px rgba(173,173,173,1);
+	box-shadow: 0px 2px 10px 0px rgba(173,173,173,1);
+}
+
+.field-selected-bank ul.bank-list li.bank{
+	height: 36px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	padding: 0 18px;
+	position: relative;
+}
+
+.field-selected-bank ul.bank-list li.bank:hover{
+	background-color: var(--color-11);
+}
+
+.field-selected-bank ul.bank-list li.bank > svg{
+	height: 16px;
+	fill: var(--color-3);
+	position: absolute;
+	right: 32px;
+	display: none;
+}
+
+.field-selected-bank ul.bank-list li.bank:hover > svg{
+	display: block;
+}
+
+.field-selected-bank ul.bank-list li.bank.active-bank{
+	background-color: var(--color-8);
+}
+
+.field-selected-bank ul.bank-list li.bank.active-bank > svg{
+	display: block;
+}
+
+.field-selected-bank ul.bank-list li.bank > img{
+	height: 10px;
+	margin-right: 10px;
+}
+
+.field-selected-bank ul.bank-list li.bank > img.sber{
+	height: 14px;
+	margin-left: -7px;
+	margin-right: 4px;
+}
+
+.field-selected-bank ul.bank-list li.bank > img.tinkoff{
+	height: 14px;
+	margin-left: -1px;
+	margin-right: 8px;
+}
+
+@media screen and (min-width: 426px){
+	.label input{
+		font-size: 16px;
+	}
+
+	.label input::placeholder{
+		font-size: 14px;
+	}
+	
+	.label span{
+		font-size: 12px;
+	}
+
+	.label span.title-sum{
+		top: -12px;
+	}
+	
+	.label span.title-range{
+		top: -12px;
+	}
+
+	.select-bank .field-selected-bank{
+		font-size: 16px;
+	}
+	
+	.select-bank .field-selected-bank .field-bank-title{
+		top: -14px;
+	}
+	
+	.select-bank .field-selected-bank .field-bank-title > span{
+		font-size: 12px;
+		margin-right: 4px;
+	}
+	
+	.select-bank .field-selected-bank .field-bank-title > svg{
+		height: 18px;
+	}
+	
+	.field-selected-bank-content > img{
+		height: 12px;
+	}
+	
+	.field-selected-bank-content > img.sber{
+		height: 16px;
+	}
+	
+	.field-selected-bank-content > img.tinkoff{
+		height: 16px;
+	}
+	
+	.field-selected-bank ul.bank-list li.bank{
+		height: 38px;
+	}
+
+	.field-selected-bank ul.bank-list li.bank > svg{
+		height: 18px;
+	}
+
+	.field-selected-bank ul.bank-list li.bank > img{
+		height: 12px;
+	}
+	
+	.field-selected-bank ul.bank-list li.bank > img.sber{
+		height: 16px;
+	}
+	
+	.field-selected-bank ul.bank-list li.bank > img.tinkoff{
+		height: 16px;
+	}
+}
+
+.form-buttons{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.form-buttons button{
+	height: 44px;
+	border-radius: 6px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.form-buttons button.cancel{
+	width: 35%;
+	background-color: transparent;
+	border: 2px solid;
+	border-color: var(--color-11);
+	color: var(--color-10);
+}
+
+.form-buttons button.continue{
+	width: 60%;
+	background-color: var(--color-3);
+	color: var(--color-2);
+	transition: background-color 0.2s ease;
+}
+
+.form-buttons button.continue:hover{
+	background-color: var(--color-13);
+
+}

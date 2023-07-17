@@ -1,0 +1,61 @@
+.timer-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 25px;
+}
+
+.base-timer {
+	position: relative;
+	width: 80px;
+	height: 80px;
+}
+
+.base-timer__center{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.base-timer__svg {
+	transform: scaleX(-1);
+}
+
+.base-timer__circle {
+	fill: none;
+	stroke: none;
+}
+
+.base-timer__path-elapsed {
+	stroke-width: 8px;
+	stroke: var(--color-11);
+}
+
+.base-timer__path-remaining {
+	stroke-width: 8px;
+	stroke-linecap: round;
+	transform-origin: center;
+	transition: 0.4s linear stroke-dasharray;
+	fill-rule: nonzero;
+	stroke: var(--color-3);
+}
+
+.base-timer__label {
+	position: relative;
+	font-size: 22px;
+	pointer-events: none;
+	user-select: none;
+}
+
+#add-five-minutes-button{
+	font-size: 12px;
+	cursor: pointer;
+	color: var(--color-3);
+	background-color: transparent;
+	user-select: none;
+}

@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Форма оплаты</title>
+		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/header.css">
+		<link rel="stylesheet" href="css/form.css">
+		<link rel="stylesheet" href="css/transfer-form.css">
+		<link rel="stylesheet" href="css/waves.css">
+		<link rel="stylesheet" href="css/loader.css">
+		<link rel="stylesheet" href="css/instruction.css">
+		<link rel="stylesheet" href="css/timer.css">
+	</head>
+
+	<body id="body">
+		<div class="main-wrapper">
+			<!-- шапка -->
+			<header class="header">
+				<!-- обертка шапки -->
+				<div class="header-wrapper">
+					<!-- логотип -->
+					<div class="logo">
+						<img src="images/content/logo.png" alt="">
+					</div>
+
+					<div class="info-lang">
+						<!-- ссылка на инструкцию -->
+						<div class="instruction">
+							<div class="icon-info">
+								<svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" id="Layer_1" viewBox="0 0 32 32">
+									<path class="cls-1" d="M16,1A15,15,0,1,0,31,16,15,15,0,0,0,16,1Zm2,22a2,2,0,0,1-4,0V16a2,2,0,0,1,4,0ZM16,12.19A2.19,2.19,0,1,1,18.19,10,2.19,2.19,0,0,1,16,12.19Z" />
+								</svg>
+							</div>
+							<p>Инструкция</p>
+						</div>
+						<!-- блок с языками -->
+						<div class="choose-lang">
+							<div class="current-lang my-wave">
+								<!-- тут отображается выбранный из списка язык -->
+							</div>
+							<!-- выпадающий список языков -->
+							<ul class="lang-list">
+								<li class="lang" id="ru">
+									<img src="images/flags/icons8-russia-48.png" alt="">
+									<span>ru</span>
+								</li>
+								<li class="lang" id="en">
+									<img src="images/flags/Flag-usa-64x34.png" alt="">
+									<span>en</span>
+								</li>
+								<li class="lang" id="kz">
+									<img src="images/flags/flag-kazakhstana-64x64.png" alt="">
+									<span>kz</span>
+								</li>
+								<!-- тут вы можете добавить свои языки по такому же принципу как выше -->
+							</ul>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<main id="main">
+				<!-- обертка -->
+				<div class="main-form-wrapper">
+					<!-- тело формы -->
+					<!------------------------------------------->
+					<!--------- форма "по номеру карты" --------->
+					<!------------------------------------------->
+					<div class="form-body" id="by-card-number">
+						<!-- шапка формы -->
+						<div class="form-header">
+							<!-- прогрессбар -->
+							<div class="step-bar">
+								<div class="step-progress"></div>
+								<div class="circle">
+									<span class="step-text">1/3</span>
+								</div>
+							</div>
+							<span class="header-txt">Детали перевода</span>
+						</div>
+						
+						<!-- форма -->
+						<form class="form" action="" method="" autocomplete="" >
+							<div class="form-wrapper-inside">
+								<!-- выбор метода оплаты -->
+								<div class="type-of-payment">
+									<!-- По номеру карты -->
+									<button type="button" id="select-type-in-card-card" class="active my-wave">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+											<path d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z" />
+										</svg>
+										<span>По номеру карты</span>
+									</button>
+									<!-- СБП по номеру тел. -->
+									<button type="button" id="select-type-in-card-number" class="my-wave">
+										<img src="images/content/sbp.png" alt="">
+										<span>СБП по номеру тел.</span>
+									</button>
+								</div>
+
+								<!-- поля ввода данных -->
+								<div class="input-field-wrapper">
+									<!-- поле ввода суммы -->
+									<label for="sum" class="label sum-num">
+										<span class="title-sum">Сумма перевода</span>
+										<span class="title-range">от 1 000 до 500 000</span>
+										<input type="text" name="sum" id="sum-value-card-number" value="5 000" placeholder="Введите сумму перевода" class="input-with-digits-only">
+										<span class="currency">RUB</span>
+									</label>
+									<!-- поле выбора банка -->
+									<div class="select-bank">
+										<div class="field-selected-bank">
+											<div class="field-bank-title">
+												<span>Банк получателя</span>
+												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+													<path d="M12 1.99902C17.5237 1.99902 22.0015 6.47687 22.0015 12.0006C22.0015 17.5243 17.5237 22.0021 12 22.0021C6.47626 22.0021 1.99841 17.5243 1.99841 12.0006C1.99841 6.47687 6.47626 1.99902 12 1.99902ZM12 3.49902C7.30469 3.49902 3.49841 7.3053 3.49841 12.0006C3.49841 16.6959 7.30469 20.5021 12 20.5021C16.6952 20.5021 20.5015 16.6959 20.5015 12.0006C20.5015 7.3053 16.6952 3.49902 12 3.49902ZM11.9963 10.4996C12.376 10.4994 12.69 10.7813 12.7399 11.1473L12.7468 11.2491L12.7504 16.7507C12.7507 17.1649 12.4151 17.5009 12.0009 17.5012C11.6212 17.5014 11.3072 17.2195 11.2573 16.8535L11.2504 16.7517L11.2468 11.2501C11.2465 10.8359 11.5821 10.4999 11.9963 10.4996ZM12.0004 7.00184C12.552 7.00184 12.9991 7.44896 12.9991 8.0005C12.9991 8.55205 12.552 8.99917 12.0004 8.99917C11.4489 8.99917 11.0017 8.55205 11.0017 8.0005C11.0017 7.44896 11.4489 7.00184 12.0004 7.00184Z" />
+												</svg>
+											</div>
+											<div class="field-selected-bank-content" id="field-selected-bank-content">
+												<img src="images/content/bank.svg" alt="">
+												<span>Любой</span>
+											</div>
+											<div class="galochka">
+												<span></span>
+												<span></span>
+											</div>
+
+											<!-- список банков -->
+											<ul class="bank-list">
+												<li class="bank active-bank">
+													<img src="images/content/bank.svg" class="another" alt="">
+													<span>Любой</span>
+													<svg style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+														<g id="grid_system"/>
+														<g id="_icons">
+															<path d="M18.3,6.3L9.1,16.4l-2.3-3c-0.3-0.4-1-0.5-1.4-0.2c-0.4,0.3-0.5,1-0.2,1.4l3,4C8.4,18.8,8.7,19,9,19c0,0,0,0,0,0   c0.3,0,0.5-0.1,0.7-0.3l10-11c0.4-0.4,0.3-1-0.1-1.4C19.3,5.9,18.6,5.9,18.3,6.3z"/>
+														</g>
+													</svg>
+												</li>
+												<li class="bank">
+													<img src="images/content/sber.png" class="sber" alt="">
+													<span>Сбер</span>
+													<svg style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+														<g id="grid_system"/>
+														<g id="_icons">
+															<path d="M18.3,6.3L9.1,16.4l-2.3-3c-0.3-0.4-1-0.5-1.4-0.2c-0.4,0.3-0.5,1-0.2,1.4l3,4C8.4,18.8,8.7,19,9,19c0,0,0,0,0,0   c0.3,0,0.5-0.1,0.7-0.3l10-11c0.4-0.4,0.3-1-0.1-1.4C19.3,5.9,18.6,5.9,18.3,6.3z"/>
+														</g>
+													</svg>
+												</li>
+												<li class="bank">
+													<img src="images/content/tinkoff.png" class="tinkoff" alt="">
+													<span>Тинькофф</span>
+													<svg style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+														<g id="grid_system"/>
+														<g id="_icons">
+															<path d="M18.3,6.3L9.1,16.4l-2.3-3c-0.3-0.4-1-0.5-1.4-0.2c-0.4,0.3-0.5,1-0.2,1.4l3,4C8.4,18.8,8.7,19,9,19c0,0,0,0,0,0   c0.3,0,0.5-0.1,0.7-0.3l10-11c0.4-0.4,0.3-1-0.1-1.4C19.3,5.9,18.6,5.9,18.3,6.3z"/>
+														</g>
+													</svg>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<!-- кнопки -->
+								<div class="form-buttons">
+									<!-- Отмена -->
+									<button type="button" class="my-wave cancel" id="by-card-number-cancel">
+										<span>Отмена</span>
+									</button>
+									<!-- Продолжить -->
+									<button type="button" class="my-wave continue" id="by-card-number-continue">
+										<span>Продолжить</span>
+										<p class="loader"></p>
+									</button>
+								</div>
+							</div>
+						</form>
+					</div>
+
+					<!-- тело формы -->
+					<!------------------------------------------->
+					<!------- форма "по номеру телефона" -------->
+					<!------------------------------------------->
+					<div class="form-body" id="by-phone-number">
+						<!-- шапка формы -->
+						<div class="form-header">
+							<!-- прогрессбар -->
+							<div class="step-bar">
+								<div class="step-progress"></div>
+								<div class="circle">
+									<span class="step-text">1/3</span>
+								</div>
+							</div>
+							<span class="header-txt">Детали перевода</span>
+						</div>
+						
+						<!-- форма -->
+						<form class="form" action="" method="" autocomplete="" >
+							<div class="form-wrapper-inside">
+								<!-- выбор метода оплаты -->
+								<div class="type-of-payment">
+									<!-- По номеру карты -->
+									<button type="button" id="select-type-in-phone-card" class="my-wave">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+											<path d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z" />
+										</svg>
+										<span>По номеру карты</span>
+									</button>
+									<!-- СБП по номеру тел. -->
+									<button type="button" id="select-type-in-phone-number" class="active my-wave">
+										<img src="images/content/sbp.png" alt="">
+										<span>СБП по номеру тел.</span>
+									</button>
+								</div>
+
+								<!-- поля ввода данных -->
+								<div class="input-field-wrapper">
+									<!-- поле ввода суммы -->
+									<label for="sum" class="label sum-num">
+										<span class="title-sum">Сумма перевода</span>
+										<span class="title-range">от 1 000 до 500 000</span>
+										<input type="text" name="sum" id="sum-value-phone-number" value="5 000" placeholder="Введите сумму перевода" class="input-with-digits-only">
+										<span class="currency">RUB</span>
+									</label>
+								</div>
+
+								<!-- кнопки -->
+								<div class="form-buttons">
+									<!-- Отмена -->
+									<button type="button" class="my-wave cancel" id="by-phone-number-cancel">
+										<span>Отмена</span>
+									</button>
+									<!-- Продолжить -->
+									<button type="button" class="my-wave continue" id="by-phone-number-continue">
+										<span>Продолжить</span>
+										<p class="loader"></p>
+									</button>
+								</div>
+							</div>
+						</form>
+					</div>
+
+					<!-- инструкция -->
+					<div class="main-instruction-wrapper">
+						<div class="close-instr">
+							<div class="close-wrap">
+								<div class="x"></div>
+								<div class="y"></div>
+							</div>
+						</div>
+						<div class="wrapper-instr">
+							<ul class="instr-list">
+								<li class="instr-item"  data-accordion-height="800px">
+									<div class="accord-wrapper">
+										<div class="wrap-title-instr">
+											<!-- прогрессбар -->
+											<div class="instr-step-bar instr-step-bar-1">
+												<div class="step-progress"></div>
+												<div class="circle">
+													<span class="step-text">1/3</span>
+												</div>
+											</div>
+											<!-- заголовок -->
+											<p>Заполните детали перевода</p>
+										</div>
+										<div class="gal-instr">
+											<span></span>
+											<span></span>
+										</div>
+									</div>
+									<div class="accordion-instr-content">
+										<div class="info-content-main">
+											<div class="info-wrap">
+												<p>Выберите способ перевода:</p>
+												<div class="info-descr">
+													<div>
+														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="#0f93ff">
+															<path d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z" />
+														</svg>
+														<span>по номеру карты</span>
+													</div>
+													<div>
+														<img src="images/content/sbp.png" alt="">
+														<span>через систему быстрых платежей</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="info-content-main">
+											<div class="info-wrap">
+												<p>
+													Проверьте заявленную сумму.<br>
+													На следующем шаге вам нужно будет переверсти
+													её с точностью до копеек.
+												</p>
+											</div>
+											<div class="info-img">
+												<img src="" alt="тут должна быть картинка">
+											</div>
+										</div>
+										<div class="info-content-main">
+											<div class="info-wrap">
+												<p>
+													Для перевода по номеру карты выберите из<br>
+													списка наиболее удобный для вас банк. <br> 
+													Внутри банка переводы происходят быстрее и, как<!-- <br> -->
+													правило, без комиссии.
+												</p>
+											</div>
+											<div class="info-img">
+												<img src="" alt="тут должна быть картинка">
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="instr-item"  data-accordion-height="800px">
+									<div class="accord-wrapper">
+										<div class="wrap-title-instr">
+											<!-- прогрессбар -->
+											<div class="instr-step-bar instr-step-bar-2">
+												<div class="step-progress"></div>
+												<div class="step-progress-2"></div>
+												<div class="circle">
+													<span class="step-text">2/3</span>
+												</div>
+											</div>
+											<!-- заголовок -->
+											<p>Выполните перевод</p>
+										</div>
+										<div class="gal-instr">
+											<span></span>
+											<span></span>
+										</div>
+									</div>
+									<div class="accordion-instr-content">
+										<div class="info-content-main">
+											<div class="info-wrap">
+												<p>Выберите способ перевода:</p>
+												<div class="info-descr">
+													<div>
+														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="#0f93ff">
+															<path d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z" />
+														</svg>
+														<span>по номеру карты</span>
+													</div>
+													<div>
+														<img src="images/content/sbp.png" alt="">
+														<span>через систему быстрых платежей</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="info-content-main">
+											<div class="info-wrap">
+												<p>
+													Проверьте заявленную сумму.<br>
+													На следующем шаге вам нужно будет переверсти
+													её с точностью до копеек.
+												</p>
+											</div>
+											<div class="info-img">
+												<img src="" alt="тут должна быть картинка">
+											</div>
+										</div>
+										<div class="info-content-main">
+											<div class="info-wrap">
+												<p>
+													Для перевода по номеру карты выберите из<br>
+													списка наиболее удобный для вас банк. <br> 
+													Внутри банка переводы происходят быстрее и, как<!-- <br> -->
+													правило, без комиссии.
+												</p>
+											</div>
+											<div class="info-img">
+												<img src="" alt="тут должна быть картинка">
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="instr-item" data-accordion-height="800px">
+									<div class="accord-wrapper">
+										<div class="wrap-title-instr">
+											<!-- прогрессбар -->
+											<div class="instr-step-bar instr-step-bar-3">
+												<div class="step-progress"></div>
+												<div class="circle">
+													<span class="step-text">3/3</span>
+												</div>
+											</div>
+											<!-- заголовок -->
+											<p>Дождитесь смены статуса</p>
+										</div>
+										<div class="gal-instr">
+											<span></span>
+											<span></span>
+										</div>
+									</div>
+									<div class="accordion-instr-content">
+										<div class="info-content-main">
+											<div class="info-wrap">
+												<p>Выберите способ перевода:</p>
+												<div class="info-descr">
+													<div>
+														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="#0f93ff">
+															<path d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z" />
+														</svg>
+														<span>по номеру карты</span>
+													</div>
+													<div>
+														<img src="images/content/sbp.png" alt="">
+														<span>через систему быстрых платежей</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="info-content-main">
+											<div class="info-wrap">
+												<p>
+													Проверьте заявленную сумму.<br>
+													На следующем шаге вам нужно будет переверсти
+													её с точностью до копеек.
+												</p>
+											</div>
+											<div class="info-img">
+												<img src="" alt="тут должна быть картинка">
+											</div>
+										</div>
+										<div class="info-content-main">
+											<div class="info-wrap">
+												<p>
+													Для перевода по номеру карты выберите из<br>
+													списка наиболее удобный для вас банк. <br> 
+													Внутри банка переводы происходят быстрее и, как<!-- <br> -->
+													правило, без комиссии.
+												</p>
+											</div>
+											<div class="info-img">
+												<img src="" alt="тут должна быть картинка">
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- тело формы -->
+					<!------------------------------------------->
+					<!------------- форма "перевод" ------------->
+					<!------------------------------------------->
+					<div class="form-body" id="transfer">
+						<!-- шапка формы -->
+						<div class="form-header">
+							<!-- прогрессбар -->
+							<div class="step-bar form-step-bar-2">
+								<div class="step-progress"></div>
+								<div class="step-progress-2"></div>
+								<div class="circle">
+									<span class="step-text">2/3</span>
+								</div>
+							</div>
+							<span class="header-txt">Перевод</span>
+						</div>
+						
+						<!-- форма -->
+						<form class="form" action="" method="" autocomplete="" >
+							<div class="form-wrapper-inside">
+								<!-- проверка точности суммы и таймер -->
+								<div class="accuracy-timer-wrapper">
+									<!-- таймер -->
+									<div class="timer-wrapper">
+										<div class="base-timer">
+											<svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+												<g class="base-timer__circle">
+													<circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+													<path id="base-timer-path-remaining" stroke-dasharray="283" class="base-timer__path-remaining" d="M 50, 50 m -45, 0 a 45,45 0 1,0 90,0 a 45,45 0 1,0 -90,0 "></path>
+												</g>
+											</svg>
+											<div class="base-timer__center">
+												<span id="base-timer-label" class="base-timer__label"></span>
+												<button type="button" id="add-five-minutes-button">
+													<span>+5 мин</span>
+												</button>
+											</div>
+										</div>
+									</div>
+									<!-- проверка точности суммы -->
+									<div class="accuracy-wrap">
+										<h3>Переведите точную сумму:</h3>
+										<div class="count-sum-wrap">
+											<span><span id="count-sum">5 000</span> RUB</span>
+											<svg class="feather-copy feather-copy" fill="none" stroke="#0f93ff" stroke-linecap="round" stroke-linejoin="round"
+												stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+												<rect height="13" rx="2" ry="2" width="13" x="9" y="9" />
+												<path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+											</svg>
+										</div>
+									</div>
+								</div>
+
+								<!-- данные пользователя -->
+								<div class="user-data-wrapper">
+									<!-- номер карты -->
+									<div class="card-number-data">
+										<span id="card-data-number">2202 2053 2239 3726</span>
+										<svg class="feather-copy feather-copy" fill="none" stroke="#0f93ff" stroke-linecap="round" stroke-linejoin="round"
+											stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+											<rect height="13" rx="2" ry="2" width="13" x="9" y="9" />
+											<path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+										</svg>
+									</div>
+
+									<!-- имя юзера -->
+									<div class="user-name">
+										<span id="user-name-data">Никита Ш.</span>
+									</div>
+
+									<!-- выбранный юзером банк -->
+									<div class="user-bank">
+										<img src="images/content/sber.png" alt="">
+										<span>Сбер</span>
+									</div>
+								</div>
+
+								<!-- сообщение -->
+								<div class="alert-title">
+									<span>Не оставляйте комментарий к переводу</span>
+								</div>
+
+								<!-- кнопки -->
+								<div class="form-buttons">
+									<!-- Отмена -->
+									<button type="button" class="my-wave cancel">
+										<span>Отмена</span>
+									</button>
+									<!-- Продолжить -->
+									<button type="button" id="transfer-btn" class="my-wave continue">
+										<span>Перевод выполнен</span>
+										<p class="loader"></p>
+									</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</main>
+
+			<!-- сотрудничество и тех поддержка -->
+			<footer>
+				
+			</footer>
+		</div>
+
+		<!-- <div class="attention-message">
+			<div class="attention-block-mess-wrap">
+				<div class="red-alert">
+					<h3>Внимание!</h3>
+					<p>Срок зачисления будет увеличен в случае перевода неправильной суммы</p>
+				</div>
+				<div class="current-sum">
+					<h4>Переведите точную сумму:</h4>
+					<span>5 000 RUB</span>
+				</div>
+				<button type="button">
+					<span>Понятно</span>
+				</button>
+			</div>
+		</div>
+
+		<div class="blue-wrapper"></div> -->
+
+		<script>
+			
+		</script>
+		
+		<!-- jQuery -->
+		<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+		
+		<!-- скрипт для выбора языка -->
+		<script>
+			var currentLangElement = document.querySelector('.current-lang');
+			var langListElements = document.querySelectorAll('.lang');
+			var chooseLang = document.querySelector('.choose-lang');
+			var langListItems = document.querySelector('.lang-list');
+
+			chooseLang.addEventListener('click', function () {
+				chooseLang.classList.toggle('active-choose-lang');
+				langListItems.classList.toggle('active-lang-list');
+			})
+
+			/* изменить '[0]' значение для смены отображения языка по умолчанию */
+			currentLangElement.innerHTML = langListElements[0].innerHTML;
+
+			langListElements.forEach(function (langElement) {
+				langElement.addEventListener('click', function () {
+					var langText = langElement.querySelector('span').textContent;
+					var langImage = langElement.querySelector('img').cloneNode(true);
+
+					currentLangElement.innerHTML = '';
+
+					var langTextElement = document.createElement('span');
+					langTextElement.textContent = langText;
+
+					langTextElement.className = langElement.querySelector('span').className;
+					langImage.className = langElement.querySelector('img').className;
+
+					currentLangElement.appendChild(langImage);
+					currentLangElement.appendChild(langTextElement);
+				});
+			});
+		</script>
+
+		<!-- скрипт для создания динамичных эффектов загрузки -->
+		<script>
+			var continueBtnCardNumber = document.getElementById('by-card-number-continue');
+			var continueBtnPhoneNumber = document.getElementById('by-phone-number-continue');
+			var continueBtnTransfer = document.getElementById('transfer-btn');
+
+			function showLoader(button) {
+				button.classList.add('loading');
+				button.querySelector('span').style.display = 'none';
+				button.querySelector('.loader').style.display = 'inline-block';
+			}
+
+			function hideLoader(button) {
+				button.classList.remove('loading');
+				button.querySelector('span').style.display = 'block';
+				button.querySelector('.loader').style.display = 'none';
+			}
+
+			continueBtnCardNumber.addEventListener('click', function () {
+				showLoader(continueBtnCardNumber);
+				setTimeout(function () {
+					hideLoader(continueBtnCardNumber);
+				}, 300);
+			});
+
+			continueBtnPhoneNumber.addEventListener('click', function () {
+				showLoader(continueBtnPhoneNumber);
+				setTimeout(function () {
+					hideLoader(continueBtnPhoneNumber);
+				}, 300);
+			});
+
+			continueBtnTransfer.addEventListener('click', function (){
+				showLoader(continueBtnTransfer);
+				setTimeout(function () {
+					hideLoader(continueBtnTransfer);
+				}, 300);
+			})
+		</script>
+		
+		<!-- скрипт для отображения формы по выбранному методу оплаты -->
+		<script>
+			var selectCardMethod = document.getElementById('select-type-in-card-card');
+			var selectCardMethod2 = document.getElementById('select-type-in-phone-card');
+			var selectNumberMethod = document.getElementById('select-type-in-card-number');
+			var selectNumberMethod2 = document.getElementById('select-type-in-phone-number');
+			var formForCardMethod = document.getElementById('by-card-number');
+			var formForNumberMethod = document.getElementById('by-phone-number');
+
+			selectCardMethod.addEventListener('click', function () {
+				showLoader(continueBtnCardNumber);
+				setTimeout(function () {
+					formForNumberMethod.style.display = 'none';
+					formForCardMethod.style.display = 'block';
+					hideLoader(continueBtnCardNumber);
+				}, 300);
+			});
+
+			selectCardMethod2.addEventListener('click', function () {
+				selectCardMethod.classList.remove('border-hidden');
+				selectNumberMethod2.classList.add('border-hidden');
+				showLoader(continueBtnPhoneNumber);
+				setTimeout(function () {
+					formForNumberMethod.style.display = 'none';
+					formForCardMethod.style.display = 'block';
+					hideLoader(continueBtnPhoneNumber);
+				}, 300);
+			});
+
+			selectNumberMethod.addEventListener('click', function () {
+				selectNumberMethod2.classList.remove('border-hidden');
+				selectCardMethod.classList.add('border-hidden');
+				showLoader(continueBtnCardNumber);
+				setTimeout(function () {
+					formForCardMethod.style.display = 'none';
+					formForNumberMethod.style.display = 'block';
+					hideLoader(continueBtnCardNumber);
+				}, 300);
+			});
+
+			selectNumberMethod2.addEventListener('click', function () {
+				showLoader(continueBtnPhoneNumber);
+				setTimeout(function () {
+					formForCardMethod.style.display = 'none';
+					formForNumberMethod.style.display = 'block';
+					hideLoader(continueBtnPhoneNumber);
+				}, 300);
+			});
+		</script>
+
+		<!-- скрипт для эффекта волны при нажатии -->
+		<script>
+			var waves = document.querySelectorAll('.my-wave');
+
+			waves.forEach(wave => {
+				wave.addEventListener('click', function(e) {
+					var
+						size = Math.max(this.offsetWidth, this.offsetHeight);
+						rect = this.getBoundingClientRect();
+						x = e.clientX - rect.left - size / 2;
+						y = e.clientY - rect.top - size / 2;
+						myWave = document.createElement('span');
+
+					myWave.className = 'wave';
+					myWave.style.cssText = `width:${size}px; height:${size}px; top:${y}px; left:${x}px`;
+					this.appendChild(myWave);
+
+					setTimeout(() => myWave.remove(), 800);
+				});
+			});
+		</script>
+
+		<!-- скрипт для обработки ввода допустимой суммы -->
+		<script>
+			var inputsWithDigitsOnly = document.querySelectorAll('.input-with-digits-only');
+
+			inputsWithDigitsOnly.forEach(input => {
+				input.addEventListener('input', function (e) {
+					var inputValue = this.value.replace(/\D/g, '');
+					if (inputValue !== '') {
+						inputValue = inputValue.length > 6 ? inputValue.slice(0, 6) : inputValue;
+						inputValue = Math.min(Number(inputValue), 500000);
+					}
+					this.value = formatNumber(inputValue);
+				});
+			});
+
+			function formatNumber(number) {
+				return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+			}
+		</script>
+
+		<!-- скрипт выпадающего списка для выбора банков -->
+		<script>
+			var fieldSelectedBank = document.querySelector('.field-selected-bank');
+			var selectedBankMainList = document.querySelector('.bank-list');
+			var galochka = document.querySelector('.galochka');
+			var isOpen = false;
+
+			fieldSelectedBank.addEventListener('click', function () {
+				if (!isOpen) {
+					fieldSelectedBank.classList.add('active-select');
+					selectedBankMainList.style.display = 'block';
+					galochka.style.transition = 'transform 0.2s ease';
+					galochka.style.transform = 'rotate(180deg)';
+					setTimeout(() => {
+						selectedBankMainList.style.opacity = '1';
+					}, 20);
+					isOpen = true;
+				} else {
+					fieldSelectedBank.classList.remove('active-select');
+					selectedBankMainList.style.opacity = '0';
+					galochka.style.transform = 'rotate(0deg)';
+					setTimeout(() => {
+						selectedBankMainList.style.display = 'none';
+					}, 100);
+					isOpen = false;
+				}
+			});
+		</script>
+
+		<!-- скрипт обработки выбранного банка -->
+		<script>
+			var bankList = document.getElementsByClassName('bank');
+
+			function handleClick(event) {
+				var selectedBank = event.currentTarget;
+				var bankImage = selectedBank.querySelector('img');
+				var bankName = selectedBank.querySelector('span').textContent;
+				var selectedBankContent = document.getElementById('field-selected-bank-content');
+				var selectedBankImage = selectedBankContent.querySelector('img');
+				var selectedBankText = selectedBankContent.querySelector('span');
+
+				for (var i = 0; i < bankList.length; i++) {
+					bankList[i].classList.remove('active-bank');
+				}
+
+				selectedBank.classList.add('active-bank');
+				var imageClass = bankImage.classList[0];
+				selectedBankImage.className = '';
+				selectedBankImage.classList.add(imageClass);
+				selectedBankImage.src = bankImage.src;
+				selectedBankText.textContent = bankName;
+			}
+
+			for (var i = 0; i < bankList.length; i++) {
+				bankList[i].addEventListener('click', handleClick);
+			}
+		</script>
+
+		<!-- скрипт обработки аккордеона инструкции -->
+		<script>
+			var accordItems = document.querySelectorAll('.instr-item');
+
+			accordItems.forEach((item) => {
+				var accordWrapper = item.querySelector('.accord-wrapper');
+				var accordContent = item.querySelector('.accordion-instr-content');
+				var galInstr = item.querySelector('.gal-instr');
+				var circleItem = item.querySelector('.instr-step-bar .circle');
+
+				accordWrapper.addEventListener('click', () => {
+					var isActive = item.classList.contains('active-accord');
+					/* Изменить значение в html у атрибута если нужна другая высота */
+					var customHeight = item.getAttribute('data-accordion-height');
+
+					accordItems.forEach((otherItem) => {
+						otherItem.classList.remove('active-accord');
+						otherItem.querySelector('.accordion-instr-content').style.height = '0';
+						otherItem.querySelector('.gal-instr').style.transform = 'rotate(0deg)';
+						otherItem.querySelectorAll('.gal-instr span').forEach((span) => {
+							span.style.backgroundColor = 'var(--color-10)';
+						});
+						otherItem.querySelector('.accord-wrapper').style.backgroundColor = 'var(--color-15)';
+						otherItem.querySelector('.instr-step-bar .circle').style.backgroundColor = 'var(--color-15)';
+					});
+
+					if (!isActive) {
+						item.classList.add('active-accord');
+						accordContent.style.height = customHeight || 'auto';
+						galInstr.style.transform = 'rotate(180deg)';
+						galInstr.querySelectorAll('span').forEach((span) => {
+							span.style.backgroundColor = 'var(--color-3)';
+						});
+						accordWrapper.style.backgroundColor = 'var(--color-16)';
+						circleItem.style.backgroundColor = 'var(--color-16)';
+					} else {
+						accordContent.style.height = '0';
+						galInstr.style.transform = 'rotate(0deg)';
+						galInstr.querySelectorAll('span').forEach((span) => {
+							span.style.backgroundColor = 'var(--color-10)';
+						});
+						accordWrapper.style.backgroundColor = 'var(--color-15)';
+						circleItem.style.backgroundColor = 'var(--color-15)';
+					}
+				});
+
+				accordWrapper.addEventListener('mouseenter', () => {
+					var isActive = item.classList.contains('active-accord');
+					if (!isActive) {
+						circleItem.style.backgroundColor = 'var(--color-2)';
+						accordWrapper.style.backgroundColor = 'var(--color-2)';
+					}
+				});
+
+				accordWrapper.addEventListener('mouseleave', () => {
+					var isActive = item.classList.contains('active-accord');
+					if (!isActive) {
+						circleItem.style.backgroundColor = 'var(--color-15)';
+						accordWrapper.style.backgroundColor = 'var(--color-15)';
+					}
+				});
+			});
+		</script>
+
+		<!-- скрипт открывающий инструкцию -->
+		<script>
+			var instructionBtn = document.querySelector('.instruction');
+			var closeInstrBtn = document.querySelector('.close-instr');
+			var instructionList = document.querySelector('.main-instruction-wrapper');
+			var body = document.getElementById('body');
+
+			instructionBtn.addEventListener('click', () => {
+				instructionList.style.display = 'block';
+				setTimeout(() => {
+					instructionList.style.opacity = '1';
+					body.style.overflow = 'hidden';
+				}, 20)
+			});
+
+			closeInstrBtn.addEventListener('click', ()=>{
+				instructionList.style.opacity = '0';
+				setTimeout(()=>{
+					instructionList.style.display = 'none';
+					body.style.overflow = 'auto';
+				}, 100)
+			})
+		</script>
+
+		<!-- скрипт таймера  -->
+		<script>
+			const FULL_DASH_ARRAY = 283;
+			const TIME_LIMIT = 600;
+			let timePassed = 300;
+			let timeLeft = TIME_LIMIT - timePassed;
+			let timerInterval = null;
+
+			const baseTimerLabel = document.getElementById("base-timer-label");
+			const addFiveMinutesButton = document.getElementById("add-five-minutes-button");
+			addFiveMinutesButton.addEventListener("click", addFiveMinutes);
+
+			baseTimerLabel.innerHTML = formatTime(timePassed);
+
+			function onTimesUp() {
+				clearInterval(timerInterval);
+			}
+
+			function startTimer() {
+				timerInterval = setInterval(() => {
+					timePassed++;
+					timeLeft = TIME_LIMIT - timePassed;
+					baseTimerLabel.innerHTML = formatTime(timeLeft);
+					setCircleDasharray();
+
+					if (timeLeft === 0) {
+						addFiveMinutesButton.style.display = 'none';
+						onTimesUp();
+					}
+				}, 1000);
+			}
+
+			function formatTime(time) {
+				const minutes = Math.floor(time / 60);
+				let seconds = time % 60;
+
+				if (seconds < 10) {
+					seconds = `0${seconds}`;
+				}
+
+				return `${minutes}:${seconds}`;
+			}
+
+			function calculateTimeFraction() {
+				const rawTimeFraction = timeLeft / TIME_LIMIT;
+				return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
+			}
+
+			function setCircleDasharray() {
+				const circleDasharray = `${(calculateTimeFraction() * FULL_DASH_ARRAY).toFixed(0)} 283`;
+				document.getElementById("base-timer-path-remaining").setAttribute("stroke-dasharray", circleDasharray);
+			}
+
+			function addFiveMinutes() {
+				addFiveMinutesButton.style.display = 'none';
+				timePassed -= 300;
+				timeLeft = TIME_LIMIT - timePassed;
+				baseTimerLabel.innerHTML = formatTime(timeLeft);
+				setCircleDasharray();
+			}
+		</script>
+
+		<!-- скрипт для отображения формы "перевод" и отображения блока внимание-->
+		<script>
+			var transferForm = document.getElementById('transfer');
+			var body = document.getElementById('body');
+
+			continueBtnCardNumber.addEventListener('click', function () {
+				showLoader(continueBtnCardNumber);
+				setTimeout(function () {
+					formForCardMethod.style.display = 'none';
+					transferForm.style.display = 'block';
+
+					startTimer();
+
+					/* добавление блока внимание */
+					setTimeout(() => {
+						var blueWrapper = document.createElement("div");
+						blueWrapper.className = "blue-wrapper";
+
+						var attentionDiv = document.createElement("div");
+						attentionDiv.className = "attention-message";
+						attentionDiv.innerHTML = `
+							<div class="attention-block-mess-wrap">
+								<div class="red-alert">
+									<h3>Внимание!</h3>
+									<p>Срок зачисления будет увеличен в случае перевода неправильной суммы</p>
+								</div>
+								<div class="current-sum">
+									<h4>Переведите точную сумму:</h4>
+									<span>5 000 RUB</span>
+								</div>
+								<button type="button" id="understand">
+									<span>Понятно</span>
+								</button>
+							</div>
+						`;
+
+						transferForm.style.boxShadow = 'none';
+						transferForm.style.webkitBoxShadow = 'none';
+						transferForm.style.MozBoxShadow = 'none';
+
+						body.appendChild(blueWrapper);
+						body.appendChild(attentionDiv);
+
+						var redAlert = attentionDiv.querySelector('.red-alert');
+						var understandBtn = attentionDiv.querySelector('#understand');
+
+						setTimeout(()=>{
+							redAlert.style.top = '0';
+							understandBtn.style.bottom = '0';
+						}, 35)
+
+						understandBtn.addEventListener('click', () => {
+							attentionDiv.style.display = 'none';
+
+							body.style.background = 'var(--color-7)';
+							transferForm.style.boxShadow = '0px 4px 14px 2px rgba(217,217,217,1)';
+							transferForm.style.webkitBoxShadow = '0px 4px 14px 2px rgba(217,217,217,1)';
+							transferForm.style.MozBoxShadow = '0px 4px 14px 2px rgba(217,217,217,1)';
+
+							body.removeChild(blueWrapper);
+							body.removeChild(attentionDiv);
+						});
+					}, 100);
+
+					hideLoader(continueBtnCardNumber);
+				}, 300);
+			});
+
+			continueBtnPhoneNumber.addEventListener('click', function () {
+				showLoader(continueBtnPhoneNumber);
+				setTimeout(function () {
+					formForNumberMethod.style.display = 'none';
+					transferForm.style.display = 'block';
+
+					startTimer();
+
+					/* добавление блока внимание */
+					setTimeout(() => {
+						var blueWrapper = document.createElement("div");
+						blueWrapper.className = "blue-wrapper";
+
+						var attentionDiv = document.createElement("div");
+						attentionDiv.className = "attention-message";
+						attentionDiv.innerHTML = `
+							<div class="attention-block-mess-wrap">
+								<div class="red-alert">
+									<h3>Внимание!</h3>
+									<p>Срок зачисления будет увеличен в случае перевода неправильной суммы</p>
+								</div>
+								<div class="current-sum">
+									<h4>Переведите точную сумму:</h4>
+									<span>5 000 RUB</span>
+								</div>
+								<button type="button" id="understand">
+									<span>Понятно</span>
+								</button>
+							</div>
+						`;
+
+						transferForm.style.boxShadow = 'none';
+						transferForm.style.webkitBoxShadow = 'none';
+						transferForm.style.MozBoxShadow = 'none';
+
+						body.appendChild(blueWrapper);
+						body.appendChild(attentionDiv);
+
+						var redAlert = attentionDiv.querySelector('.red-alert');
+						var understandBtn = attentionDiv.querySelector('#understand');
+						
+						setTimeout(()=>{
+							redAlert.style.top = '0';
+							understandBtn.style.bottom = '0';
+						}, 35)
+
+						understandBtn.addEventListener('click', () => {
+							attentionDiv.style.display = 'none';
+
+							body.style.background = 'var(--color-7)';
+							transferForm.style.boxShadow = '0px 4px 14px 2px rgba(217,217,217,1)';
+							transferForm.style.webkitBoxShadow = '0px 4px 14px 2px rgba(217,217,217,1)';
+							transferForm.style.MozBoxShadow = '0px 4px 14px 2px rgba(217,217,217,1)';
+
+							body.removeChild(blueWrapper);
+							body.removeChild(attentionDiv);
+						});
+					}, 100);
+
+					hideLoader(continueBtnPhoneNumber);
+				}, 300);
+			});
+		</script>
+
+		<!-- скрипт всплывающего окна после добавления 5 минут -->
+		<script>
+			var isAlert = false;
+			
+			addFiveMinutesButton.addEventListener("click", () => {
+				/* добавление алерта дополнительного времени */
+				var alertDiv = document.createElement("div");
+				alertDiv.className = "alert-timer-update";
+				alertDiv.innerHTML = `
+					<div class="close-alert">
+						<span></span>
+						<span></span>
+					</div>
+					<h4>Время таймера обновлено.</h4>
+					<p>Добавлено 5 минут.</p> 
+				`;
+				main.appendChild(alertDiv);
+				var alertBlock = alertDiv;
+
+				var closeAlert = alertDiv.querySelector('.close-alert');
+
+				closeAlert.addEventListener('click', () => {
+					if (alertBlock) {
+						alertBlock.style.opacity = '0';
+						setTimeout(() => {
+							alertBlock.style.display = 'none';
+							main.removeChild(alertDiv);
+						}, 400);
+					}
+				});
+
+				if (alertBlock) {
+					alertBlock.style.display = 'flex';
+					setTimeout(() => {
+						alertBlock.style.opacity = '1';
+					}, 40);
+
+					if (!isAlert) {
+						setTimeout(() => {
+							if (alertBlock) {
+								alertBlock.style.opacity = '0';
+								setTimeout(() => {
+									alertBlock.style.display = 'none';
+									main.removeChild(alertDiv);
+								}, 400);
+							}
+						}, 3000);
+					}
+				}
+				isAlert = true;
+			});
+		</script>
+	</body>
+</html>
